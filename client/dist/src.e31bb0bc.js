@@ -1121,11 +1121,26 @@ var renderFurniturePage = function renderFurniturePage(furnitureData) {
   document.querySelector('main .container').innerHTML = "\n        <div class=\"furniture-page\">\n            <div class=\"furniture-image\">\n                <img src=\"/assets/images/".concat(furnitureData.image, "\" alt=\"image\">\n            </div>\n            <div class=\"arrow\">\n                <i class=\"fas fa-arrow-right\"></i>\n            </div>\n            <div class=\"furniture-details\">\n                <h4 class=\"type\">").concat(furnitureData.type, "</h4>\n                <h2 class=\"name\">").concat(furnitureData.name, "</h2>\n                <p class=\"description\">").concat(furnitureData.description, "</p>\n                <h4 class=\"ppu-text\">Price per unit</h4>\n                <div class=\"options\">\n                    <h1 class=\"price\">$").concat(furnitureData.price, "</h1>\n                    <span class=\"buy-now\">Buy Now</span>\n                    <span class=\"cart grey-text\"><i class=\"fa fa-cart-plus\" aria-hidden=\"true\"></i></span>\n                </div>\n            </div>\n        </div>\n    ");
 };
 
+var showError = function showError() {
+  document.querySelector('main .container').innerHTML = '<h2 class="text-center">Oops! Something went wrong.</h2>';
+};
+
+var showLoader = function showLoader() {
+  document.querySelector('.loader-container').style.visibility = 'visible';
+};
+
+var hideLoader = function hideLoader() {
+  document.querySelector('.loader-container').style.visibility = 'hidden';
+};
+
 var _default = {
   renderFurnitures: renderFurnitures,
   renderPagination: renderPagination,
   renderFurnituresListPage: renderFurnituresListPage,
-  renderFurniturePage: renderFurniturePage
+  renderFurniturePage: renderFurniturePage,
+  showError: showError,
+  showLoader: showLoader,
+  hideLoader: hideLoader
 };
 exports.default = _default;
 },{"@babel/runtime/helpers/toConsumableArray":"../node_modules/@babel/runtime/helpers/toConsumableArray.js"}],"utils.js":[function(require,module,exports) {
@@ -1227,42 +1242,63 @@ var routeHandler = /*#__PURE__*/function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             furnitureId = window.location.hash.replace('#', '');
+            _context2.prev = 1;
 
             if (!furnitureId) {
-              _context2.next = 8;
+              _context2.next = 11;
               break;
             }
 
-            _context2.next = 4;
+            _furniture.default.showLoader();
+
+            _context2.next = 6;
             return init();
 
-          case 4:
+          case 6:
+            _furniture.default.hideLoader();
+
             furnitureData = state.furnitures.items.find(function (el) {
               return el.id === furnitureId;
             });
 
             _furniture.default.renderFurniturePage(furnitureData);
 
-            _context2.next = 13;
+            _context2.next = 18;
             break;
 
-          case 8:
+          case 11:
             _furniture.default.renderFurnituresListPage();
 
-            _context2.next = 11;
+            _furniture.default.showLoader();
+
+            _context2.next = 15;
             return init();
 
-          case 11:
+          case 15:
+            _furniture.default.hideLoader();
+
             _furniture.default.renderFurnitures(state.furnitures.items, state.currentPage, state.itemsPerPage);
 
             _furniture.default.renderPagination(state.totalPages, state.currentPage);
 
-          case 13:
+          case 18:
+            _context2.next = 24;
+            break;
+
+          case 20:
+            _context2.prev = 20;
+            _context2.t0 = _context2["catch"](1);
+
+            _furniture.default.showError();
+
+            _furniture.default.hideLoader();
+
+          case 24:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2);
+    }, _callee2, null, [[1, 20]]);
   }));
 
   return function routeHandler() {

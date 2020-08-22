@@ -104,6 +104,18 @@ const renderFurniturePage = (furnitureData) => {
     `;
 };
 
+const showError = () => {
+    document.querySelector('main .container').innerHTML = '<h2 class="text-center">Oops! Something went wrong.</h2>';
+};
+
+const showLoader = () => {
+    document.querySelector('.loader-container').style.visibility = 'visible';
+};
+
+const hideLoader = () => {
+    document.querySelector('.loader-container').style.visibility = 'hidden';
+};
+
 export default {
-    renderFurnitures, renderPagination, renderFurnituresListPage, renderFurniturePage,
+    renderFurnitures, renderPagination, renderFurnituresListPage, renderFurniturePage, showError, showLoader, hideLoader,
 };

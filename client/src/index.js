@@ -20,15 +20,24 @@ const init = async () => {
 /** HANDLE URL ROUTE HASH CHANGE */
 const routeHandler = async () => {
     const furnitureId = window.location.hash.replace('#', '');
-    if (furnitureId) {
-        await init();
-        const furnitureData = state.furnitures.items.find((el) => el.id === furnitureId);
-        furnituresView.renderFurniturePage(furnitureData);
-    } else {
-        furnituresView.renderFurnituresListPage();
-        await init();
-        furnituresView.renderFurnitures(state.furnitures.items, state.currentPage, state.itemsPerPage);
-        furnituresView.renderPagination(state.totalPages, state.currentPage);
+    try {
+        if (furnitureId) {
+            furnituresView.showLoader();
+            await init();
+            furnituresView.hideLoader();
+            const furnitureData = state.furnitures.items.find((el) => el.id === furnitureId);
+            furnituresView.renderFurniturePage(furnitureData);
+        } else {
+            furnituresView.renderFurnituresListPage();
+            furnituresView.showLoader();
+            await init();
+            furnituresView.hideLoader();
+            furnituresView.renderFurnitures(state.furnitures.items, state.currentPage, state.itemsPerPage);
+            furnituresView.renderPagination(state.totalPages, state.currentPage);
+        }
+    } catch (err) {
+        furnituresView.showError();
+        furnituresView.hideLoader();
     }
 };
 ['hashchange', 'load'].forEach((event) => window.addEventListener(event, routeHandler));
