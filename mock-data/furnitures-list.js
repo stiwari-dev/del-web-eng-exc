@@ -87,6 +87,6 @@ exports.furnituresList = [
         price: 700,
         rating: 3,
         image: 'hokes.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet laboriosam ad ipsa ducimus facere sapiente modi praesentium accusamus esse veniam! Similique, cum expedita vel tenetur sapiente dolore exercitationem ut optio?"
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet laboriosam ad ipsa ducimus facere sapiente modi praesentium accusamus esse veniam! Similique, cum expedita vel tenetur sapiente dolore exercitationem ut optio? sit amet, consectetur adipisicing elit."
     }
 ];
