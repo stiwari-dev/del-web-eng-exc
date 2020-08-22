@@ -6,7 +6,7 @@ export default class Furnitures {
     }
 
     async getFurnituresData() {
-        const response = await fetch('http://localhost:8080/furnitures');
+        const response = await fetch('https://del-web-eng-exc.herokuapp.com/furnitures');
         const data = await response.json();
         this.items = data.furnituresList;
     }

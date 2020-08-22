@@ -971,7 +971,7 @@ var Furnitures = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return fetch('http://localhost:8080/furnitures');
+                return fetch('https://del-web-eng-exc.herokuapp.com/furnitures');
 
               case 2:
                 response = _context.sent;
