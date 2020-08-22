@@ -1,0 +1,361 @@
+/* VARIABLES */
+/* PLACEHOLDER STYLES */
+main .furniture-page .furniture-details .options, main .layout .furnitures-grid .furniture-tile .ratings-cart, main .layout .furnitures-grid .furniture-tile .type-price, main .layout .filters .filter-option-price .range-value, main .layout .filters .filter-option, header .container #top-navbar ul, header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .layout .filters .filter-option-price, header .container #top-navbar ul .menu-icon {
+  display: flex;
+  flex-direction: column;
+}
+
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.container {
+  width: 85%;
+  max-width: 1280px;
+  margin: auto;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: inline-block;
+}
+
+.grey-text, main .layout .filters .title {
+  color: #a1a1a1;
+}
+
+.text-center {
+  align-items: center;
+}
+
+.cart {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+header {
+  margin-top: 5%;
+  margin-bottom: 2rem;
+}
+header .container {
+  height: 60px;
+}
+@media screen and (max-width: 768px) {
+  header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+  }
+}
+header .container #top-navbar {
+  width: 30%;
+}
+@media screen and (max-width: 768px) {
+  header .container #top-navbar {
+    width: 80%;
+  }
+}
+header .container #top-navbar ul li {
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+header .container #top-navbar ul li:last-child {
+  margin-right: 0;
+}
+header .container #top-navbar ul .menu-icon {
+  height: 100%;
+  width: 60px;
+  min-width: 60px;
+  padding: 18px;
+  background-color: #000000;
+}
+header .container #top-navbar ul .menu-icon .line {
+  width: 100%;
+  height: 0.25rem;
+  background-color: #ffffff;
+  margin-bottom: 4px;
+  border-radius: 1px;
+}
+header .container #top-navbar ul .menu-icon .line-half {
+  width: 50%;
+  height: 0.25rem;
+  background-color: #ffffff;
+  margin-bottom: 4px;
+  border-radius: 1px;
+}
+header .container .search-part {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+}
+@media screen and (max-width: 768px) {
+  header .container .search-part {
+    width: 80%;
+    justify-content: space-between;
+  }
+}
+header .container .search-part > span {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  header .container .search-part > span {
+    margin-left: 0;
+  }
+}
+header .container .search-part > span .fa-search {
+  margin-right: 0.5rem;
+}
+header .container .search-part > span input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  outline: none;
+}
+header .container .search-part > span input:hover, header .container .search-part > span input:active, header .container .search-part > span input:focus {
+  border-bottom: 1px solid #e1a50f;
+}
+@media screen and (max-width: 768px) {
+  header {
+    margin-top: 5%;
+  }
+}
+
+main {
+  margin-bottom: 5%;
+  /* PAGINATIONS STYLES */
+  /* FURNITURE PAGE */
+}
+main .layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2rem;
+  margin-bottom: 2.5rem;
+  /* FILTERS STYLES */
+  /* FURNITURES GRID STYLES */
+}
+@media screen and (max-width: 768px) {
+  main .layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .layout .filters {
+    width: 80%;
+    margin: auto;
+  }
+}
+main .layout .filters .title {
+  margin-bottom: 1.5rem;
+}
+main .layout .filters .filter-option {
+  padding: 0.75rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1.25px solid #a1a1a1;
+  cursor: pointer;
+}
+main .layout .filters .filter-option-price {
+  padding: 0.75rem 0;
+}
+main .layout .filters .filter-option-price .label {
+  margin-bottom: 1.5rem;
+}
+main .layout .filters .filter-option-price .slider {
+  -webkit-appearance: none;
+  outline: none;
+  background-color: #a1a1a1;
+  height: 1.5px;
+  margin-bottom: 1.5rem;
+}
+main .layout .filters .filter-option-price .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+main .layout .furnitures-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+  main .layout .furnitures-grid {
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+  }
+}
+main .layout .furnitures-grid .furniture-tile .name {
+  text-transform: capitalize;
+}
+main .layout .furnitures-grid .furniture-tile .type {
+  text-transform: uppercase;
+}
+main .layout .furnitures-grid .furniture-tile .image-container {
+  position: relative;
+  cursor: pointer;
+}
+main .layout .furnitures-grid .furniture-tile .image-container img {
+  width: 100%;
+  height: 230px;
+  min-height: 150px;
+}
+@media screen and (max-width: 768px) {
+  main .layout .furnitures-grid .furniture-tile .image-container img {
+    width: 100%;
+    height: 320px;
+    min-height: 150px;
+  }
+}
+main .layout .furnitures-grid .furniture-tile .stripe {
+  position: absolute;
+  width: 65%;
+  height: 2rem;
+  background-color: #ffffff;
+  bottom: 6px;
+}
+main .layout .furnitures-grid .furniture-tile .type-price {
+  margin-bottom: 0.5rem;
+}
+main .layout .furnitures-grid .furniture-tile .type-price .type {
+  color: #a1a1a1;
+  font-size: 12px;
+}
+main .layout .furnitures-grid .furniture-tile .ratings-cart .ratings {
+  font-size: 12px;
+}
+main .pagination {
+  height: 50px;
+}
+@media screen and (max-width: 768px) {
+  main .pagination {
+    width: 80%;
+    margin: auto;
+  }
+}
+main .pagination .page-number {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+main .pagination .page-number .page-radio-button {
+  position: absolute;
+  visibility: hidden;
+}
+main .pagination .page-number .page-radio-button:checked + .page-label {
+  color: #ffffff;
+  background-color: #000000;
+  padding: 0.75rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+main .pagination .page-number .page-label {
+  padding: 0.75rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+main .pagination .next-button {
+  cursor: pointer;
+  font-weight: bold;
+}
+main .furniture-page {
+  display: grid;
+  grid-template-columns: 40% 10% 40%;
+  grid-gap: 3rem;
+  padding: 3rem 5rem;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  main .furniture-page {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 2rem 1rem;
+  }
+}
+main .furniture-page .furniture-image img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+main .furniture-page .arrow {
+  padding: 1.5rem 0;
+  width: 70%;
+  margin: auto;
+  background-color: #ffd0bd;
+  font-size: 24px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  main .furniture-page .arrow {
+    display: none;
+  }
+}
+main .furniture-page .furniture-details .type {
+  color: #a1a1a1;
+  text-transform: capitalize;
+  margin-bottom: 0.25rem;
+}
+main .furniture-page .furniture-details .name {
+  text-transform: capitalize;
+  margin-bottom: 1.25rem;
+}
+main .furniture-page .furniture-details .description {
+  margin-bottom: 1.25rem;
+}
+main .furniture-page .furniture-details .ppu-text {
+  color: #a1a1a1;
+  margin-bottom: 0.25rem;
+}
+main .furniture-page .furniture-details .options {
+  width: 80%;
+}
+main .furniture-page .furniture-details .options .buy-now {
+  background-color: #070027;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  main .furniture-page .furniture-details .options {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=/main.48b3db1d.css.map */

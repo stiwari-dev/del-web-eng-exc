@@ -1,0 +1,249 @@
+@import './common';
+@import './header.scss';
+
+main {
+    margin-bottom: 5%;
+
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 2rem;
+        margin-bottom: 2.5rem;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        /* FILTERS STYLES */
+        .filters {
+            @media screen and (max-width: 768px) {
+                width: 80%;
+                margin: auto;
+            }
+
+            .title {
+                @extend .grey-text;
+                margin-bottom: 1.5rem;
+            }
+
+            .filter-option {
+                @extend %flex-row;
+                padding: 0.75rem 0;
+                margin-bottom: 0.5rem;
+                border-bottom: 1.25px solid $grey-color;
+                cursor: pointer;
+
+                &-price {
+                    @extend %flex-column;
+                    padding: 0.75rem 0;
+
+                    .label {
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .slider {
+                        -webkit-appearance: none;
+                        outline: none;
+                        background-color: $grey-color;
+                        height: 1.5px;
+                        margin-bottom: 1.5rem;
+
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            background-color: $white-color;
+                            width: 15px;
+                            height: 15px;
+                            border: 2px solid black;
+                            border-radius: 50%;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .range-value {
+                        @extend %flex-row;
+                    }
+                }
+            }
+        }
+
+        /* FURNITURES GRID STYLES */
+        .furnitures-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 2rem;
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: 1fr;
+                width: 80%;
+                margin: auto;
+            }
+
+            .furniture-tile {
+                .name {
+                    text-transform: capitalize;
+                }
+
+                .type {
+                    text-transform: uppercase;
+                }
+
+                .image-container {
+                    position: relative;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        height: 230px;
+                        min-height: 150px;
+
+                        @media screen and (max-width: 768px) {
+                            width: 100%;
+                            height: 320px;
+                            min-height: 150px;
+                        }
+                    }
+                }
+
+                .stripe {
+                    position: absolute;
+                    width: 65%;
+                    height: 2rem;
+                    background-color: $white-color;
+                    bottom: 6px;
+                }
+
+                .type-price {
+                    @extend %flex-row;
+                    margin-bottom: 0.5rem;
+
+                    .type {
+                        color: $grey-color;
+                        font-size: 12px;
+                    }
+                }
+
+                .ratings-cart {
+                    @extend %flex-row;
+
+                    .ratings {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* PAGINATIONS STYLES */
+    .pagination {
+        height: 50px;
+
+        @media screen and (max-width: 768px) {
+            width: 80%;
+            margin: auto;
+        }
+
+        .page-number {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+
+            .page-radio-button {
+                position: absolute;
+                visibility: hidden;
+
+                &:checked + .page-label {
+                    color: $white-color;
+                    background-color: $black-color;
+                    padding: 0.75rem 1rem;
+                    margin-right: 1rem;
+                    cursor: pointer;
+                }
+            }
+
+            .page-label {
+                padding: 0.75rem 1rem;
+                margin-right: 1rem;
+                cursor: pointer;
+            }
+        }
+
+        .next-button {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+
+    /* FURNITURE PAGE */
+    .furniture-page {
+        display: grid;
+        grid-template-columns: 40% 10% 40%;
+        grid-gap: 3rem;
+        padding: 3rem 5rem;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-gap: 2rem;
+            padding: 2rem 1rem;
+        }
+
+        .furniture-image {
+            img {
+                width: 100%;
+                height: auto;
+                margin: auto;
+            }
+        }
+
+        .arrow {
+            padding: 1.5rem 0;
+            width: 70%;
+            margin: auto;
+            background-color: rgb(255, 208, 189);
+            font-size: 24px;
+            text-align: center;
+
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .furniture-details {
+            .type {
+                color: $grey-color;
+                text-transform: capitalize;
+                margin-bottom: 0.25rem;
+            }
+
+            .name {
+                text-transform: capitalize;
+                margin-bottom: 1.25rem;
+            }
+
+            .description {
+                margin-bottom: 1.25rem;
+            }
+
+            .ppu-text {
+                color: $grey-color;
+                margin-bottom: 0.25rem;
+            }
+
+            .options {
+                width: 80%;
+                @extend %flex-row;
+
+                .buy-now {
+                    background-color: $button-color;
+                    color: $white-color;
+                    padding: 0.5rem 2rem;
+                    cursor: pointer;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "web-engineering-excercise",
+    "version": "1.0.0",
+    "description": "A single page application built with HTML5, CSS3, SCSS, JavaScript (ES6+), SASS, Node.js",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel src/index.html",
+        "prod": "parcel build src/index.html"
+    },
+    "author": "Shubham Tiwari",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-transform-runtime": "^7.9.0",
+        "@babel/preset-env": "^7.9.0",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "eslint": "^7.7.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.22.0",
+        "parcel-bundler": "^1.12.4",
+        "sass": "^1.26.10"
+    }
+}
