@@ -1133,6 +1133,14 @@ var hideLoader = function hideLoader() {
   document.querySelector('.loader-container').style.visibility = 'hidden';
 };
 
+var showSearch = function showSearch() {
+  document.querySelector('.search-input').style.visibility = 'visible';
+};
+
+var hideSearch = function hideSearch() {
+  document.querySelector('.search-input').style.visibility = 'hidden';
+};
+
 var _default = {
   renderFurnitures: renderFurnitures,
   renderPagination: renderPagination,
@@ -1140,7 +1148,9 @@ var _default = {
   renderFurniturePage: renderFurniturePage,
   showError: showError,
   showLoader: showLoader,
-  hideLoader: hideLoader
+  hideLoader: hideLoader,
+  showSearch: showSearch,
+  hideSearch: hideSearch
 };
 exports.default = _default;
 },{"@babel/runtime/helpers/toConsumableArray":"../node_modules/@babel/runtime/helpers/toConsumableArray.js"}],"utils.js":[function(require,module,exports) {
@@ -1245,7 +1255,7 @@ var routeHandler = /*#__PURE__*/function () {
             _context2.prev = 1;
 
             if (!furnitureId) {
-              _context2.next = 11;
+              _context2.next = 12;
               break;
             }
 
@@ -1263,42 +1273,46 @@ var routeHandler = /*#__PURE__*/function () {
 
             _furniture.default.renderFurniturePage(furnitureData);
 
-            _context2.next = 18;
+            _furniture.default.hideSearch();
+
+            _context2.next = 20;
             break;
 
-          case 11:
+          case 12:
             _furniture.default.renderFurnituresListPage();
 
             _furniture.default.showLoader();
 
-            _context2.next = 15;
+            _context2.next = 16;
             return init();
 
-          case 15:
+          case 16:
             _furniture.default.hideLoader();
 
             _furniture.default.renderFurnitures(state.furnitures.items, state.currentPage, state.itemsPerPage);
 
             _furniture.default.renderPagination(state.totalPages, state.currentPage);
 
-          case 18:
-            _context2.next = 24;
-            break;
+            _furniture.default.showSearch();
 
           case 20:
-            _context2.prev = 20;
+            _context2.next = 26;
+            break;
+
+          case 22:
+            _context2.prev = 22;
             _context2.t0 = _context2["catch"](1);
 
             _furniture.default.showError();
 
             _furniture.default.hideLoader();
 
-          case 24:
+          case 26:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[1, 20]]);
+    }, _callee2, null, [[1, 22]]);
   }));
 
   return function routeHandler() {

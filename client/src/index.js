@@ -27,6 +27,7 @@ const routeHandler = async () => {
             furnituresView.hideLoader();
             const furnitureData = state.furnitures.items.find((el) => el.id === furnitureId);
             furnituresView.renderFurniturePage(furnitureData);
+            furnituresView.hideSearch();
         } else {
             furnituresView.renderFurnituresListPage();
             furnituresView.showLoader();
@@ -34,6 +35,7 @@ const routeHandler = async () => {
             furnituresView.hideLoader();
             furnituresView.renderFurnitures(state.furnitures.items, state.currentPage, state.itemsPerPage);
             furnituresView.renderPagination(state.totalPages, state.currentPage);
+            furnituresView.showSearch();
         }
     } catch (err) {
         furnituresView.showError();

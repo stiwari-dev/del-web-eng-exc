@@ -116,6 +116,14 @@ const hideLoader = () => {
     document.querySelector('.loader-container').style.visibility = 'hidden';
 };
 
+const showSearch = () => {
+    document.querySelector('.search-input').style.visibility = 'visible';
+};
+
+const hideSearch = () => {
+    document.querySelector('.search-input').style.visibility = 'hidden';
+};
+
 export default {
-    renderFurnitures, renderPagination, renderFurnituresListPage, renderFurniturePage, showError, showLoader, hideLoader,
+    renderFurnitures, renderPagination, renderFurnituresListPage, renderFurniturePage, showError, showLoader, hideLoader, showSearch, hideSearch,
 };
